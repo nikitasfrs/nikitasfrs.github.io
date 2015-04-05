@@ -1,8 +1,8 @@
-<h1>Highlight.js</h1>
+<h1 id="highlight.js">Highlight.js</h1>
 
 <p>Shim repository for <a href="http://highlightjs.org/">Highlight.js</a>.</p>
 
-<h2>Package Managers</h2>
+<h2 id="package-managers">Package Managers</h2>
 
 <ul>
 <li><a href="http://bower.io">Bower</a>: <code>highlightjs</code></li>

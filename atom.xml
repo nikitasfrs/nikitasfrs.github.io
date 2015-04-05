@@ -3,20 +3,20 @@
     <title><![CDATA[Nikitas Frantzeskakis]]></title>
     <link href="http://nikitasfr.com/atom.xml" rel="self"/>
     <link href="http://nikitasfr.com/"/>
-    <updated>2015-04-05T12:12:40+00:00</updated>
+    <updated>2015-04-05T15:44:28+00:00</updated>
     <id>http://nikitasfr.com/</id>
         <generator uri="http://sculpin.io/">Sculpin</generator>
             <entry>
             <title type="html"><![CDATA[Front-end tools and practices for efficient web development]]></title>
-            <link href="http://nikitasfr.com/2015/04/01/front-end-tools-and-practices"/>
+            <link href="http://nikitasfr.com/2015/04/01/front-end-tools-and-practices/"/>
             <updated>2015-04-01T00:00:00+00:00</updated>
-            <id>http://nikitasfr.com/2015/04/01/front-end-tools-and-practices</id>
+            <id>http://nikitasfr.com/2015/04/01/front-end-tools-and-practices/</id>
             <content type="html"><![CDATA[<p>Here's a small overview of the client-side stack and approach I have recently been building websites with.</p>
 
 <p>Creating a process for the client-side, allows us to have increased control in managing the overall web stack and minimize the cost of maintenance of our projects. 
 <!--more--></p>
 
-<h3>Semantic markup</h3>
+<h3 id="semantic-markup">Semantic markup</h3>
 
 <p>I use <a href="http://twig.sensiolabs.org/">Twig</a>, a powerful templating engine and I keep my HTML documents as pure and semantic as I can. I often remind myself to keep things simple and try to separate the content from its styling or presentation, the former belonging to the HTML document, while the latter in the CSS file.</p>
 
@@ -26,7 +26,7 @@
 
 <p>Using semantic markup is a simple first step that results in making our views maintainable and aids in keeping our structure clean so that we can utilize the power our templating engine(s) provides us with. Each element thus gets assigned an ID or class that describes the content it represents, taking care to avoid using identifiers related to its presentation.</p>
 
-<h3>CSS pre-processor</h3>
+<h3 id="css-pre-processor">CSS pre-processor</h3>
 
 <p>A CSS pre-processor supports many interesting features that are currently missing from the original CSS and provides things like variables, loops, mixins and functions so one can really tune and automate the way things get done with stylesheets in general, in a simple way.</p>
 
@@ -34,7 +34,7 @@
 
 <p>Using a CSS pre-processor you have the ability to create stylesheets in many files (partials) which can later be merged to a single final minified CSS file that would normally be served to the client.</p>
 
-<h3>Semantic grid</h3>
+<h3 id="semantic-grid">Semantic grid</h3>
 
 <p>Having a grid we can set elements in, each of them taking up a specified amount of columns is a very handy abstraction. There are two criteria that I like to take into consideration when choosing a grid framework or library: the freedom to maintain semantic structure and compatibility with our CSS pre-processor of choice, in my case Sass.</p>
 
@@ -43,7 +43,7 @@ Using Susy, changing our layout and column sizes becomes only a matter of changi
 
 <p>Another point where it really shines, is the way it handles media queries which relies on the amazing Sass library, <a href="http://breakpoint-sass.com/">Breakpoint</a>. Every element gets assigned different amount of columns for different breakpoints whenever we need to apply changes for different viewports and this is extremely helpful.</p>
 
-<h3>Javascript modules</h3>
+<h3 id="javascript-modules">Javascript modules</h3>
 
 <p>I have been looking for an easy and extendable way to include and manage Javascript in my web applications, which can be optimized for mobile phones. Many backend frameworks have components that let you manage and include Javascript files in your application, however this is not always an optimal or convenient option for a non-trivial project. What would happen if at some point we need to change the server-side technology?</p>
 
@@ -56,7 +56,7 @@ Using Susy, changing our layout and column sizes becomes only a matter of changi
 <p>RequireJS comes with its own optimizer and can be used to build your project into a single minified file (or a couple of minified files depending on your configuration and the way you prefer to bundle your project&mdash;possibilities are endless.)
 Structuring our project with RequireJS we are able write our code into many separate modules and we can minimize the requests to the server by building the project into a single file for the production environment whenever we need to.</p>
 
-<h3>Build process</h3>
+<h3 id="build-process">Build process</h3>
 
 <p>Introducing these tools to make our lives easier comes at a price, and a quick way to rebuild our project whenever we make changes soon will soon become essential. We have to be able to listen for changes in our scripts and in our stylesheets and perform the necessary tasks that need to be performed for all the different environments we decide to create our projects in.</p>
 
@@ -66,7 +66,7 @@ Structuring our project with RequireJS we are able write our code into many sepa
 <a href="https://github.com/florianeckerstorfer/grunt-sculpin">grunt-sculpin</a>
 plugin which takes care running the sculpin command-line tool.</p>
 
-<h3>Closing thoughts</h3>
+<h3 id="closing-thoughts">Closing thoughts</h3>
 
 <p>Creating a workflow for the front-end, keeping it separated from the server-side technologies, forms a necessary foundation for all those changes and requirements that might suddenly arise, so we can keep our focus on the essence or functionality our project needs.</p>
 
@@ -76,9 +76,9 @@ and every other aspect we need our server to handle, while our client-side stack
         </entry>
             <entry>
             <title type="html"><![CDATA[First post]]></title>
-            <link href="http://nikitasfr.com/2014/12/31/first-post"/>
+            <link href="http://nikitasfr.com/2014/12/31/first-post/"/>
             <updated>2014-12-31T00:00:00+00:00</updated>
-            <id>http://nikitasfr.com/2014/12/31/first-post</id>
+            <id>http://nikitasfr.com/2014/12/31/first-post/</id>
             <content type="html"><![CDATA[<p>My blog is finally live, and I am very excited! Sculpin is very simple to use and I find the way of creating blog posts simply by editing a markdown file and pushing changes to a repository, really convenient.</p>
 
 <p>At this point I can only think of this blog and website as way of &ldquo;leaving a trail behind&rdquo; in the form of blog posts, both for myself by having a handy way to collect or revise information for future reference and for anyone else that might find something useful in these.</p>
