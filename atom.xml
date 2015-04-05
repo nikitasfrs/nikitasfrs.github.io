@@ -3,7 +3,7 @@
     <title><![CDATA[Nikitas Frantzeskakis]]></title>
     <link href="http://nikitasfr.com/atom.xml" rel="self"/>
     <link href="http://nikitasfr.com/"/>
-    <updated>2015-04-05T15:44:28+00:00</updated>
+    <updated>2015-04-05T21:20:13+00:00</updated>
     <id>http://nikitasfr.com/</id>
         <generator uri="http://sculpin.io/">Sculpin</generator>
             <entry>
@@ -11,10 +11,7 @@
             <link href="http://nikitasfr.com/2015/04/01/front-end-tools-and-practices/"/>
             <updated>2015-04-01T00:00:00+00:00</updated>
             <id>http://nikitasfr.com/2015/04/01/front-end-tools-and-practices/</id>
-            <content type="html"><![CDATA[<p>Here's a small overview of the client-side stack and approach I have recently been building websites with.</p>
-
-<p>Creating a process for the client-side, allows us to have increased control in managing the overall web stack and minimize the cost of maintenance of our projects. 
-<!--more--></p>
+            <content type="html"><![CDATA[<p>A client-side workflow plays a significant part in creating optimized and maintainable websites. Here's a small overview of the client-side stack I have recently been using.</p>
 
 <h3 id="semantic-markup">Semantic markup</h3>
 
@@ -24,7 +21,8 @@
 
 <p>Having to edit HTML files to change grid settings for a specific element by adding or removing the appropriate classes for example as some framework dictates can be really inconvenient, especially when these templates get splitted into many parts and processed by the backend before they get served to the client.</p>
 
-<p>Using semantic markup is a simple first step that results in making our views maintainable and aids in keeping our structure clean so that we can utilize the power our templating engine(s) provides us with. Each element thus gets assigned an ID or class that describes the content it represents, taking care to avoid using identifiers related to its presentation.</p>
+<p>Using semantic markup is a simple first step that results in making our views maintainable and aids in keeping our structure clean so that we can utilize the power our templating engine(s) provides us with. Each element thus gets assigned an ID or class that describes the content it represents, taking care to avoid using identifiers related to its presentation.
+<!--more--></p>
 
 <h3 id="css-pre-processor">CSS pre-processor</h3>
 

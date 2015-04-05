@@ -61,9 +61,17 @@ ga('send', 'pageview');
  in <a href="http://nikitasfr.com/tags/web-development">web-development</a><span>, </span><a href="http://nikitasfr.com/tags/front-end">front-end</a></p></div>
 
 <div class="post-body">
-<p>Here's a small overview of the client-side stack and approach I have recently been building websites with.</p>
+<p>A client-side workflow plays a significant part in creating optimized and maintainable websites. Here's a small overview of the client-side stack I have recently been using.</p>
 
-<p>Creating a process for the client-side, allows us to have increased control in managing the overall web stack and minimize the cost of maintenance of our projects. 
+<h3 id="semantic-markup">Semantic markup</h3>
+
+<p>I use <a href="http://twig.sensiolabs.org/">Twig</a>, a powerful templating engine and I keep my HTML documents as pure and semantic as I can. I often remind myself to keep things simple and try to separate the content from its styling or presentation, the former belonging to the HTML document, while the latter in the CSS file.</p>
+
+<p>CSS frameworks served me well in the past especially for prototyping, however conforming totally to their way of doing things without having spent time to create and tune my own workflow, resulted most of the times in a non-semantic markup which was hard to maintain.</p>
+
+<p>Having to edit HTML files to change grid settings for a specific element by adding or removing the appropriate classes for example as some framework dictates can be really inconvenient, especially when these templates get splitted into many parts and processed by the backend before they get served to the client.</p>
+
+<p>Using semantic markup is a simple first step that results in making our views maintainable and aids in keeping our structure clean so that we can utilize the power our templating engine(s) provides us with. Each element thus gets assigned an ID or class that describes the content it represents, taking care to avoid using identifiers related to its presentation.
 
 <div class="post-footer">
 <p class="read-more"><a href='http://nikitasfr.com/2015/04/01/front-end-tools-and-practices/'>Read more &#8594;</a></p>
