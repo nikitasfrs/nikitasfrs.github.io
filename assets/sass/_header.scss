@@ -1,0 +1,36 @@
+/* Header module */
+//$header-bg-color: tint(#1D242B, 30%);
+$header-bg-color:#91B8BD; 
+#header-wrap {
+    background-color: #4F5257;
+    border-top:7px solid #E37766;
+    //border-bottom:1px solid #28292B;
+}
+
+#header {
+    @include container(40em);
+    //background-color:$header-bg-color;
+    //@include padding-trailer(1);
+ 
+    h1 {
+        color: #24180F;
+        a {
+            color: tint(#24180F, 25%);
+            text-decoration: none;
+        }
+    }
+    h3 {
+        margin-top:0;
+        padding-top:0;
+        color: #BBBB84;
+    }
+    & > * {
+        padding-left:1em;
+    }
+    //border-top: 2px solid shade(#E8802F, 0%);
+    & > #logo {
+        padding-left:0;
+        @include span(12);
+    }
+}
+

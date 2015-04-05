@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="author" content="Nikitas Frantzeskakis" />
+<title>Front-end tools and practices for efficient web development - Nikitas Frantzeskakis</title>
+<link href="http://nikitasfr.com/assets/dist/css/style.css" rel="stylesheet" />
+<link href="http://nikitasfr.com/atom.xml" rel="alternate" title="Nikitas Frantzeskakis" type="application/atom+xml" />
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css" />
+<link href="http://nikitasfr.com/assets/vendor/highlightjs/styles/github.css" rel="stylesheet" type="text/css" />
+<script src="http://nikitasfr.com/assets/vendor/highlightjs/highlight.pack.js"></script>
+
+<!-- Facebook -->
+<meta property="og:title" content="Front-end tools and practices for efficient web development (Nikitas Frantzeskakis)" />
+<meta property="og:url" content="http://nikitasfr.com/2015/04/01/front-end-tools-and-practices" />
+<meta property="og:type" content="article" />
+<meta property="og:description" content="Here's a small overview of the client-side stack and approach I have recently been building websites with." />
+<!-- Twitter -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Front-end tools and practices for efficient web development (Nikitas Frantzeskakis)" />
+<meta name="twitter:description" content="Here's a small overview of the client-side stack and approach I have recently been building websites with." />
+<meta name="twitter:site" content="@nikitasfrs" />
+
+<script>
+hljs.initHighlightingOnLoad();                                 
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-61546505-1', 'auto');
+ga('send', 'pageview');
+</script>
+</head>
+<body>
+<div id="container">
+<div id="header-wrap">
+<div id="header">
+<div id="logo">
+<a href="http://nikitasfr.com"><img src="http://nikitasfr.com/assets/images/logo2.png"/></a>
+</div>
+<nav>
+<a href="http://nikitasfr.com/">Blog</a>
+<a href="http://nikitasfr.com/about">About</a>
+<a href="http://nikitasfr.com/archives">Archives</a>
+<a href="http://nikitasfr.com/tags">Tags</a>
+<a href="mailto:nikitas.frantzeskakis@gmail.com">Email</a>
+<a href="https://twitter.com/nikitasfrs">Twitter</a>
+<a href="http://nikitasfr.com/atom.xml">Feed</a>
+</nav>
+</div>
+</div>
+
+<div id="content-wrap">
+<section id ="main">
+<div class="post-heading">
+<h1 class="post-title">Front-end tools and practices for efficient web development</h1>
+<p class="post-meta"> April 1, 2015 
+ in <a href="http://nikitasfr.com/blog/tags/web-development">web-development</a><span>, </span><a href="http://nikitasfr.com/blog/tags/front-end">front-end</a></p></div>
+
+<div class="post-body">
+<p>Here's a small overview of the client-side stack and approach I have recently been building websites with.</p>
+
+<p>Creating a process for the client-side, allows us to have increased control in managing the overall web stack and minimize the cost of maintenance of our projects. 
+<!--more--></p>
+
+<h3>Semantic markup</h3>
+
+<p>I use <a href="http://twig.sensiolabs.org/">Twig</a>, a powerful templating engine and I keep my HTML documents as pure and semantic as I can. I often remind myself to keep things simple and try to separate the content from its styling or presentation, the former belonging to the HTML document, while the latter in the CSS file.</p>
+
+<p>CSS frameworks served me well in the past especially for prototyping, however conforming totally to their way of doing things without having spent time to create and tune my own workflow, resulted most of the times in a non-semantic markup which was hard to maintain.</p>
+
+<p>Having to edit HTML files to change grid settings for a specific element by adding or removing the appropriate classes for example as some framework dictates can be really inconvenient, especially when these templates get splitted into many parts and processed by the backend before they get served to the client.</p>
+
+<p>Using semantic markup is a simple first step that results in making our views maintainable and aids in keeping our structure clean so that we can utilize the power our templating engine(s) provides us with. Each element thus gets assigned an ID or class that describes the content it represents, taking care to avoid using identifiers related to its presentation.</p>
+
+<h3>CSS pre-processor</h3>
+
+<p>A CSS pre-processor supports many interesting features that are currently missing from the original CSS and provides things like variables, loops, mixins and functions so one can really tune and automate the way things get done with stylesheets in general, in a simple way.</p>
+
+<p>Since automation is always good, and as I've been reading many good things about <a href="http://sass-lang.com/">Sass</a>, I decided to give it a try. There's also a strong community supporting it and a huge set of libraries and frameworks written in Sass. The normal CSS syntax can also be used so it can be learned pretty quickly.</p>
+
+<p>Using a CSS pre-processor you have the ability to create stylesheets in many files (partials) which can later be merged to a single final minified CSS file that would normally be served to the client.</p>
+
+<h3>Semantic grid</h3>
+
+<p>Having a grid we can set elements in, each of them taking up a specified amount of columns is a very handy abstraction. There are two criteria that I like to take into consideration when choosing a grid framework or library: the freedom to maintain semantic structure and compatibility with our CSS pre-processor of choice, in my case Sass.</p>
+
+<p>I have been very happy using <a href="http://susydocs.oddbird.net/en/latest/">Susy</a>, a grid framework written in Sass, that does all the math for you and lets you create awesome layouts. It is completely unopinionated and does not get in your way. 
+Using Susy, changing our layout and column sizes becomes only a matter of changing the values for a couple of variables in our Sass files, so simple!</p>
+
+<p>Another point where it really shines, is the way it handles media queries which relies on the amazing Sass library, <a href="http://breakpoint-sass.com/">Breakpoint</a>. Every element gets assigned different amount of columns for different breakpoints whenever we need to apply changes for different viewports and this is extremely helpful.</p>
+
+<h3>Javascript modules</h3>
+
+<p>I have been looking for an easy and extendable way to include and manage Javascript in my web applications, which can be optimized for mobile phones. Many backend frameworks have components that let you manage and include Javascript files in your application, however this is not always an optimal or convenient option for a non-trivial project. What would happen if at some point we need to change the server-side technology?</p>
+
+<p>Separating our code into multiple files really helps but then having to load files synchronously via multiple script tags creates performace issues, DOM content will not load until all the tags defined in the head section complete loading first, which becomes more evident when the site gets accessed by mobile phones and slow connections. Simple workarounds such as placing the script tags at the end exist, though most of the times these are not really the answer.</p>
+
+<p>Having a completely independent way to include, merge and minify your code, and by using the very useful <a href="http://www.adequatelygood.com/JavaScript-Module-Pattern-In-Depth.html">module pattern</a>, you can write more efficient modular code, while at the same time minimizing the coupling between client and the server code, and decreasing load times.</p>
+
+<p>To handle all these issues I use <a href="http://requirejs.org/">RequireJS</a> a Javascript module loader. Its AMD web module support gives you the power to split your code into separate files that get loaded asynchronously. Code can be reusued and all our files can be cleanly organised.</p>
+
+<p>RequireJS comes with its own optimizer and can be used to build your project into a single minified file (or a couple of minified files depending on your configuration and the way you prefer to bundle your project&mdash;possibilities are endless.)
+Structuring our project with RequireJS we are able write our code into many separate modules and we can minimize the requests to the server by building the project into a single file for the production environment whenever we need to.</p>
+
+<h3>Build process</h3>
+
+<p>Introducing these tools to make our lives easier comes at a price, and a quick way to rebuild our project whenever we make changes soon will soon become essential. We have to be able to listen for changes in our scripts and in our stylesheets and perform the necessary tasks that need to be performed for all the different environments we decide to create our projects in.</p>
+
+<p>Fortunately tools exist for exactly this purpose and the one I have been using is <a href="http://gruntjs.com/">Grunt</a>, a Javascript task-runner that can be installed and managed via <a href="https://www.npmjs.com/">npm</a>, the <a href="https://nodejs.org/">Node.js</a> package manager.</p>
+
+<p>Grunt supports plugins that cover almost every need, it is really simple to use, and gives you the ability to register many tasks covering every need. I am even using it right now in composing this post, letting it sit quietly in the background and listen for changes in my markdown files, awaiting to build the project every time I make changes, through the
+<a href="https://github.com/florianeckerstorfer/grunt-sculpin">grunt-sculpin</a>
+plugin which takes care running the sculpin command-line tool.</p>
+
+<h3>Closing thoughts</h3>
+
+<p>Creating a workflow for the front-end, keeping it separated from the server-side technologies, forms a necessary foundation for all those changes and requirements that might suddenly arise, so we can keep our focus on the essence or functionality our project needs.</p>
+
+<p>As a result, the whole web stack gets easier to manage and everything finds its proper place in the spectrum of technologies we are using. Our server-side code becomes lean and is used for the functionality, database access
+and every other aspect we need our server to handle, while our client-side stack ensures us that information gets presented in a maintainable, optimized and responsive way.</p>
+ 
+</div>
+
+<div class="post-footer">
+<ul>
+<li>Previous post: <a class="post-previous" href="http://nikitasfr.com/2014/12/31/first-post"> First post</a></li>
+</section>
+
+</div>
+
+<div id="footer-push"></div>
+</div>
+</div>
+
+<div id="footer">
+<p id="copy">&copy;2015 Nikitas Frantzeskakis</p> 
+</div>
+
+</body>
+</html>

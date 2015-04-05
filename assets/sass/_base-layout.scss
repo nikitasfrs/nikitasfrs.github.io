@@ -1,0 +1,60 @@
+/* Base Layout config */
+
+$susy: (
+    columns: 12,
+    gutters: 1/2,
+    math: fluid,
+    gutter-position:split,
+    global-box-sizing: border-box 
+);
+
+@include border-box-sizing;
+
+// Breakpoints
+$bp-small : max-width 29em;
+$bp-med : max-width 46.8em;
+$bp-large : max-width 50em;
+$bp-xl : max-width 73em;
+
+
+// Layout
+#content-wrap { @include container(40em);}
+
+#main, article {
+    @include span(12 of 12);
+    
+    -webkit-box-shadow: 1px 1px 2px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    1px 1px 2px 0px rgba(50, 50, 50, 0.75);
+    box-shadow:         1px 1px 2px 0px rgba(50, 50, 50, 0.75);
+
+    //@include padding-trailer(1);
+    background-color: #FFFFFF; 
+
+    border: 1px solid #3F4145;
+    border-top:0;
+
+    & > *, & > #post-other-posts {
+        margin-left: 5%;
+        margin-right:5%;
+    }
+}
+
+article + article {
+    margin-top:1em;
+}
+
+$body-bg-color: #959AA3;
+
+// Style
+body {
+    background-color:$body-bg-color;
+}
+
+p, ul li {
+    font-family: 'PT Serif', sans-serif;
+}
+
+img {
+    max-width:100%;
+}
+

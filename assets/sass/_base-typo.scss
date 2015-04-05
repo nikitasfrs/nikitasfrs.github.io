@@ -1,0 +1,127 @@
+
+/*
+ *
+ * Typo Scale at http://modularscale.com/scale/?px1=13&px2=30&ra1=1.618&ra2=0
+ * Origins: 13px, 30px, 1:1.618 - golden section
+ * 
+ */ 
+
+
+$base-font-size: 16px; /* Scale origin */
+$base-line-height: 23px; 
+
+$rhythm-unit:"rem";
+$base-font-family: 'PT Sans', sans-serif;
+
+//$base-font-color: shade(#4E2923,30%);
+$base-font-color: #252629; 
+$main-link-color: #2C5BAD;
+
+body {
+    //color: $base-font-color;
+    font-family: $base-font-family;
+    em {
+        font-style:italic;
+    }
+}
+
+body, body * {
+    -webkit-font-smoothing: antialiased;
+}
+
+
+h1, h2, h3 {
+    text-rendering: optimizeLegibility; 
+}
+
+h1 {
+    @include adjust-font-size-to(25.888px);
+    font-weight:700;
+    //letter-spacing: 1px;
+}
+
+h2 {
+    @include adjust-font-size-to(21px);
+    font-weight:700;
+}  
+
+h3 { 
+
+    @include adjust-font-size-to(16.000px);
+    font-weight:700;
+    padding-bottom:12px;
+}
+
+pre > code {
+    font-family:monospace;
+    @include margin-leader(1, 12px);
+}
+
+#main, article { 
+    //@include padding-trailer(1);
+    padding-bottom:1em;
+    & p + p{
+        margin-top:0.75em;
+    }
+    & pre + p {
+        @include padding-leader(1);
+    }
+    & pre + h2 {
+        @include padding-leader(1);
+    }
+
+    & p + h3 {
+        @include padding-leader(1);
+    }
+
+    & > h1, & > h2 {
+        padding-top:1.35em;
+    }
+
+    & > ul {
+        padding-top:1em;
+    }
+
+    p>a, & > ul li > a {
+        color: $main-link-color;
+        text-decoration:none;
+        &:hover {
+            color: tint($main-link-color, 50%);
+        }
+        @include transition(color 0.3s);
+    }
+
+    & > ul li {
+        list-style-type:disc;
+        list-style-position:inside;
+    }
+
+}
+
+#archive {
+    h2 {
+        @include padding-leader(1);
+        @include padding-trailer(1);
+
+    }
+
+    h3 {
+        padding-bottom:.75em;
+    }
+
+   .archive-entry + h3 {
+        @include padding-leader(1);
+    }
+
+    p+p {
+        padding-top:.75em;
+    }
+    @include padding-trailer(1);
+    
+}
+
+#tags {
+    @include padding-trailer(1);
+}
+
+@include establish-baseline;

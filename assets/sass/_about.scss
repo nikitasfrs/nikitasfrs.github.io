@@ -1,0 +1,13 @@
+/* About module */
+#about-header {
+    padding-top:1em;
+    border-bottom:1px solid $base-font-color;
+}
+#about {
+    padding-top:1em;
+    #about-website {
+        margin-top:1em;
+        padding-top:1em;
+        border-top: 1px solid $base-font-color;
+    }
+}

@@ -1,0 +1,29 @@
+/* Footer module */
+
+@include sticky-footer(33px, "#container", "#footer-push", "#footer");
+
+// the catch
+#footer-push{ 
+    clear:both;
+}
+#footer {
+    //@include container(45em);
+    //background-color: tint(#1D242B,15%);
+    //@include margin-leader(1);
+    text-align:center;
+    height:auto;
+    color: #EFEFEF;
+    p {
+        //@include adjust-font-size-to(11.459px);
+        @include padding-leader(1/5, 11.459px);
+        @include padding-trailer(1/5, 11.459px);
+    }
+    & > * {
+        //padding-left:3em;
+    }
+    & > p {
+        padding-left:0;
+     //   @include span(12);
+    } 
+
+}
