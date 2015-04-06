@@ -76,7 +76,7 @@ ga('send', 'pageview');
 
 <h3 id="css-pre-processor">CSS pre-processor</h3>
 
-<p>A CSS pre-processor supports many interesting features that are currently missing from the original CSS and provides things like variables, loops, mixins and functions so one can really tune and automate the way things get done with stylesheets in general, in a simple way.</p>
+<p>A CSS pre-processor supports many interesting features that are currently missing from the original CSS and provides things like variables, loops, mixins and functions so one can really tune and automate the way things get done with stylesheets in general.</p>
 
 <p>Since automation is always good, and as I've been reading many good things about <a href="http://sass-lang.com/">Sass</a>, I decided to give it a try. There's also a strong community supporting it and a huge set of libraries and frameworks written in Sass. The normal CSS syntax can also be used so it can be learned pretty quickly.</p>
 
@@ -97,9 +97,9 @@ Using Susy, changing our layout and column sizes becomes only a matter of changi
 
 <p>Separating our code into multiple files really helps but then having to load files synchronously via multiple script tags creates performace issues, DOM content will not load until all the tags defined in the head section complete loading first, which becomes more evident when the site gets accessed by mobile phones and slow connections. Simple workarounds such as placing the script tags at the end exist, though most of the times these are not really the answer.</p>
 
-<p>Having a completely independent way to include, merge and minify your code, and by using the very useful <a href="http://www.adequatelygood.com/JavaScript-Module-Pattern-In-Depth.html">module pattern</a>, you can write more efficient modular code, while at the same time minimizing the coupling between client and the server code, and decreasing load times.</p>
+<p>Having a completely independent way to include, merge and minify your code, and by using the very useful <a href="http://www.adequatelygood.com/JavaScript-Module-Pattern-In-Depth.html">module pattern</a>, you can write more efficient modular code, while at the same time minimizing the coupling between client and server code and decreasing load times.</p>
 
-<p>To handle all these issues I use <a href="http://requirejs.org/">RequireJS</a> a Javascript module loader. Its AMD web module support gives you the power to split your code into separate files that get loaded asynchronously. Code can be reusued and all our files can be cleanly organised.</p>
+<p>To handle all these issues I use <a href="http://requirejs.org/">RequireJS</a> a Javascript module loader. Its AMD web module support gives you the power to split your code into separate files that get loaded asynchronously. Code can be reused and all our files can be cleanly organised.</p>
 
 <p>RequireJS comes with its own optimizer and can be used to build your project into a single minified file (or a couple of minified files depending on your configuration and the way you prefer to bundle your project&mdash;possibilities are endless.)
 Structuring our project with RequireJS we are able write our code into many separate modules and we can minimize the requests to the server by building the project into a single file for the production environment whenever we need to.</p>
