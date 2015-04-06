@@ -3,14 +3,14 @@
     <title><![CDATA[Nikitas Frantzeskakis]]></title>
     <link href="http://nikitasfr.com/atom.xml" rel="self"/>
     <link href="http://nikitasfr.com/"/>
-    <updated>2015-04-06T08:20:38+00:00</updated>
+    <updated>2015-04-06T08:25:20+00:00</updated>
     <id>http://nikitasfr.com/</id>
         <generator uri="http://sculpin.io/">Sculpin</generator>
             <entry>
             <title type="html"><![CDATA[Front-end tools and practices for efficient web development]]></title>
-            <link href="http://nikitasfr.com/2015/04/01/front-end-tools-and-practices/"/>
-            <updated>2015-04-01T00:00:00+00:00</updated>
-            <id>http://nikitasfr.com/2015/04/01/front-end-tools-and-practices/</id>
+            <link href="http://nikitasfr.com/2015/04/05/front-end-tools-and-practices/"/>
+            <updated>2015-04-05T00:00:00+00:00</updated>
+            <id>http://nikitasfr.com/2015/04/05/front-end-tools-and-practices/</id>
             <content type="html"><![CDATA[<p>A client-side workflow plays a significant part in creating optimized and maintainable websites. Here's a small overview of the client-side stack I have recently been using.</p>
 
 <h3 id="semantic-markup">Semantic markup</h3>
