@@ -3,14 +3,14 @@
     <title><![CDATA[Nikitas Frantzeskakis]]></title>
     <link href="http://nikitasfr.com/atom.xml" rel="self"/>
     <link href="http://nikitasfr.com/"/>
-    <updated>2015-04-07T11:52:21+00:00</updated>
+    <updated>2015-04-07T12:07:36+00:00</updated>
     <id>http://nikitasfr.com/</id>
         <generator uri="http://sculpin.io/">Sculpin</generator>
             <entry>
             <title type="html"><![CDATA[Front-end tools and practices for efficient web development]]></title>
-            <link href="http://nikitasfr.com/blog/2015/04/05/front-end-tools-and-practices-for-efficient-web-development"/>
+            <link href="http://nikitasfr.com/blog/2015/04/05/front-end-tools-and-practices/"/>
             <updated>2015-04-05T00:00:00+00:00</updated>
-            <id>http://nikitasfr.com/blog/2015/04/05/front-end-tools-and-practices-for-efficient-web-development</id>
+            <id>http://nikitasfr.com/blog/2015/04/05/front-end-tools-and-practices/</id>
             <content type="html"><![CDATA[<p>A client-side workflow plays a significant part in creating optimized and maintainable websites. Here's a small overview of the client-side stack I have recently been using.</p>
 
 <h3 id="semantic-markup">Semantic markup</h3>
@@ -74,9 +74,9 @@ and every other aspect we need our server to handle, while our client-side stack
         </entry>
             <entry>
             <title type="html"><![CDATA[First post]]></title>
-            <link href="http://nikitasfr.com/blog/2014/12/31/first-post"/>
+            <link href="http://nikitasfr.com/blog/2014/12/31/first-post/"/>
             <updated>2014-12-31T00:00:00+00:00</updated>
-            <id>http://nikitasfr.com/blog/2014/12/31/first-post</id>
+            <id>http://nikitasfr.com/blog/2014/12/31/first-post/</id>
             <content type="html"><![CDATA[<p>My blog is finally live, and I am very excited! Sculpin is very simple to use and I find the way of creating blog posts simply by editing a markdown file and pushing changes to a repository, really convenient.</p>
 
 <p>At this point I can only think of this blog and website as way of &ldquo;leaving a trail behind&rdquo; in the form of blog posts, both for myself by having a handy way to collect or revise information for future reference and for anyone else that might find something useful in these.</p>
