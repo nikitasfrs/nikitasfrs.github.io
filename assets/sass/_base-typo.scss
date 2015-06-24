@@ -49,7 +49,6 @@ h3 {
 
     @include adjust-font-size-to(16.000px);
     font-weight:700;
-    padding-bottom:12px;
 }
 
 pre > code {
@@ -57,12 +56,25 @@ pre > code {
     @include margin-leader(1, 12px);
 }
 
+p, ul li, ol li {
+    font-family: 'PT Serif', sans-serif;
+}
+
+
 #main, article { 
     //@include padding-trailer(1);
     padding-bottom:1em;
-    & p + p{
+    & p + p, ol, & ul + p {
         margin-top:0.75em;
     }
+    li + li {
+        margin-top:0.75em;
+    }
+
+    ol {
+        margin-left:2em;
+    }
+
     & pre + p {
         @include padding-leader(1);
     }
@@ -71,7 +83,9 @@ pre > code {
     }
 
     & p + h3 {
-        @include padding-leader(1);
+        padding-top:1em;
+        padding-bottom:1em;
+        //@include padding-leader(1);
     }
 
     & > h1, & > h2 {

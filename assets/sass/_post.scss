@@ -42,11 +42,15 @@ h1.post-title {
     //@include padding-leader(1); 
     padding-top:1em;
     color: $base-font-color;
+    strong {
+        font-weight: bold;
+    }
 
     h2 {
         //color:#4E2923;
         color: shade(#FF4C05,50%); 
-        @include margin-leader(1);
+        //@include margin-leader(1);
+        padding-top:1.3em;
         //@include adjust-font-size-to(16.000px);
         font-weight:600;
     }
@@ -54,7 +58,7 @@ h1.post-title {
     ul {
         padding-left: 5%;
         padding-top: $base-font-size;
-        padding-bottom: $base-font-size;
+        //padding-bottom: $base-font-size;
         li {
             list-style-type:disc;
             list-style-position:inside;
@@ -68,6 +72,10 @@ h1.post-title {
             color: tint($post-link-color, 50%);
         }
         @include transition(color 0.3s);
+    }
+
+    ol li {
+        list-style-type:decimal;
     }
 }
 
@@ -127,17 +135,23 @@ a.post-permalink {
         }
     }
 
-    ul {
+    ul.post-other-posts {
+        padding-top:1em;
+        //padding-bottom:$base-font-size;
+
         li {
             list-style-type:disc;
-
-            //font-family: 'Open Sans', sans-serif;
-            padding-top:$base-font-size;
+                        //font-family: 'Open Sans', sans-serif;
             font-weight:bold;
             a { 
                 font-weight:normal;
             }
         }
+
+        li + li {
+            margin-top:0.5em;
+        }
+
         a:hover {
             text-decoration:underline;
         }
