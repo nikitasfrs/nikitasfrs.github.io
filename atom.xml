@@ -3,7 +3,7 @@
     <title><![CDATA[Nikitas Frantzeskakis]]></title>
     <link href="http://nikitasfr.com/atom.xml" rel="self"/>
     <link href="http://nikitasfr.com/"/>
-    <updated>2015-08-31T08:02:51+00:00</updated>
+    <updated>2015-08-31T08:15:13+00:00</updated>
     <id>http://nikitasfr.com/</id>
         <generator uri="http://sculpin.io/">Sculpin</generator>
             <entry>
@@ -21,7 +21,7 @@
 
 <p>Testing goes hand-in-hand with refactoring however, so basic code organization skills along with an understanding of any frameworks our code is based upon, are essential to the process.</p>
 
-<p>Due to the fact that the discipline of testing has many facets, I have included an overview of inheritance in Backbone with a series of code organization and testing recipes, for the purposes of this post, that have been proved to me to be really useful.</p>
+<p>The discipline of testing has many facets and for the purposes of this post I have included an overview of inheritance in Backbone with a series of code organization and testing recipes that have been proved to me to be really useful.</p>
 
 <p>Let's jump right in and have a look at how the inheritance model is built in Backbone.js base objects.</p>
 
