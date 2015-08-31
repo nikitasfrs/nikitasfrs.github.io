@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="author" content="Nikitas Frantzeskakis" />
+<title>Building testable applications with Backbone.js - Nikitas Frantzeskakis</title>
+<link href="http://nikitasfr.com/assets/dist/css/style.css" rel="stylesheet" />
+<link href="http://nikitasfr.com/atom.xml" rel="alternate" title="Nikitas Frantzeskakis" type="application/atom+xml" />
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css" />
+<link href="http://nikitasfr.com/assets/vendor/highlightjs/styles/github.css" rel="stylesheet" type="text/css" />
+<script src="http://nikitasfr.com/assets/vendor/highlightjs/highlight.pack.js"></script>
+
+<!-- Facebook -->
+<meta property="og:title" content="Building testable applications with Backbone.js (Nikitas Frantzeskakis)" />
+<meta property="og:url" content="http://nikitasfr.com/blog/2015/08/31/building-testable-applications-with-backbone/" />
+<meta property="og:type" content="article" />
+<meta property="og:description" content="Piecing libraries together to quickly produce a result can be one thing; building maintainable applications and test suites around them however, can be quite another." />
+<!-- Twitter -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Building testable applications with Backbone.js (Nikitas Frantzeskakis)" />
+<meta name="twitter:description" content="Piecing libraries together to quickly produce a result can be one thing; building maintainable applications and test suites around them however, can be quite another." />
+<meta name="twitter:site" content="@nikitasfrs" />
+
+<script>
+hljs.initHighlightingOnLoad();                                 
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-61546505-1', 'auto');
+ga('send', 'pageview');
+</script>
+</head>
+<body>
+<div id="container">
+<div id="header-wrap">
+<div id="header">
+<div id="logo">
+<a href="http://nikitasfr.com"><img src="http://nikitasfr.com/assets/images/logo2.png"/></a>
+</div>
+<nav>
+<a href="http://nikitasfr.com/">Blog</a>
+<a href="http://nikitasfr.com/about/">About</a>
+<a href="https://github.com/nikitasfrs">GitHub</a>
+<a href="http://nikitasfr.com/blog/tags/">Tags</a>
+<a href="mailto:nikitas.frantzeskakis@gmail.com">Email</a>
+<a href="https://twitter.com/nikitasfrs">Twitter</a>
+<a href="http://nikitasfr.com/atom.xml">Feed</a>
+</nav>
+</div>
+</div>
+
+<div id="content-wrap">
+<div id="article-wrap">
+<article>
+<div class="top-corner"></div>
+<div class="post-heading">
+<h1 class="post-title">Building testable applications with Backbone.js</h1>
+<p class="post-meta"> August 31, 2015 
+ in <a href="http://nikitasfr.com/blog/tags/javascript/">javascript</a><span>, </span><a href="http://nikitasfr.com/blog/tags/backbone/">backbone</a><span>, </span><a href="http://nikitasfr.com/blog/tags/testing/">testing</a></p></div>
+
+<div class="post-body">
+<p>Piecing libraries together to quickly produce a result can be one thing; building maintainable applications and test suites around them however, can be quite another.</p>
+
+<p>The former approach leads in spending endless hours of frustration and mismanagement, while the latter in the freedom or mastery of &ldquo;bending&rdquo; tools and abstractions to serve business requirements in a precise way, an ability that can be discerned in skilled engineers.</p>
+
+<p>While the quick approach can be our only choice in certain situations, one will eventually need to incorporate testing in the development process, sooner or later, if there's any hope of achieving anything beyond a mere prototype.</p>
+
+<!--more-->
+
+<p>Testing goes hand-in-hand with refactoring however, so basic code organization skills along with an understanding of any frameworks our code is based upon, are essential to the process.</p>
+
+<p>The discipline of testing has many facets and for the purposes of this post I have included an overview of inheritance in Backbone with a series of code organization and testing recipes that have been proved to me to be really useful.</p>
+
+<p>Let's jump right in and have a look at how the inheritance model is built in Backbone.js base objects.</p>
+
+<h2 id="inheritance-in-backbone">Inheritance in Backbone</h2>
+
+<p>Backbone provides us with a powerful way to extend its base objects. This section assumes knowledge of objects, prototypes functions and scopes in JavaScript.</p>
+
+<p>As we will see later on when we'll be using a test framework to spy on methods expecting certain results back, without clear understanding of this behaviour of the framework we would be unable to test important parts of our code.</p>
+
+<p>We will focus on the following piece of code for the remainder of this post:</p>
+
+<pre><code class="js">var Widget = Backbone.View.extend({
+    initialize: function (opt) {
+        this.listenTo(this.model, 'change', this.render);
+    },
+    someMethod: function () {
+        console.log('I am a method');
+        return this;
+    },
+    render: function () {
+        return this;
+    }
+});
+var widget = new Widget({
+    el: '#element',
+    model: widgetModel
+})
+</code></pre>
+
+<p>Keeping everything in mind as two distinct phases, type creation and instantiation respectively, occuring at different moments in time, helps us understand how inheritance in Backbone works.</p>
+
+<h3 id="creating-the-type">Creating the type</h3>
+
+<p>Having a look at Backbone's source code we can see that objects passed as first argument in extend, get mixed-in with the prototype of the resulting object.</p>
+
+<p>Let's examine what happens when we call extend from a Backbone object in more detail (view the source code for this section <a href="http://backbonejs.org/docs/backbone.html#section-245">here</a>):</p>
+
+<ol>
+<li>Resulting object stores the original base constructor function, without calling it.</li>
+<li>Static properties are mixed with the resulting object, if supplied.</li>
+<li>Prototype chain is setup using a surrogate object.</li>
+<li>Prototype properties are mixed with the resulting object, if supplied.</li>
+<li>A reference pointing to the parent's prototype is stored in &#95;&#95;super&#95;&#95; and the resulting object is returned.</li>
+</ol>
+
+<p>Widget results in a constructor which&mdash;once invoked in the next phase&mdash;will immediately call Backbone.View (the base constructor), and carries in its prototype all of our additional properties.</p>
+
+<h3 id="creating-the-instance">Creating the instance</h3>
+
+<p>Here's what's happening inside the Backbone.View base constructor (view the source code for this section <a href="http://backbonejs.org/docs/backbone.html#section-147">here</a>):</p>
+
+<ol>
+<li>A unique ID is generated for the resulting object.</li>
+<li>The resulting object gets assigned a series of specific instance properties or methods (model, collection, el, etc..) , if these are specified.</li>
+<li>DOM setup takes place.</li>
+<li>initialize gets called and the resulting object is returned.</li>
+</ol>
+
+<p>Of this second series of steps, our focus will be mainly placed on steps 2 and 4, which are common to all Backbone base objects (not just the View.)</p>
+
+<p>It can be useful to think this phase happening when the <em>new</em> keyword in our code is encountered, as this is where the constructor is called.</p>
+
+<h2 id="code-organization">Code organization</h2>
+
+<p>We should now look at some simple ways to organize your code, that can make it lend itself to the power of our test suits, with ease.</p>
+
+<h3 id="module-management">Module management</h3>
+
+<p>I have incorporated <a href="https://en.wikipedia.org/wiki/CommonJS">CommonJS</a> into my workflow and gave browserify a try during this summer. This proved to be a great choice in many situations.</p>
+
+<p>As much as I like the AMD pattern and used it in many projects, I have to admit that the CommonJS syntax is way more terse and can be customized to suit our needs easily.</p>
+
+<p>There's also the additional benefit that we can dissect pieces of our code using the Node REPL and its libraries directly, which can make the process of testing really efficient.</p>
+
+<p>Having a consistent way of exposure across all modules makes code more predictable resulting in a clean API.
+Remember, the state our code is in will eventually be reflected back to us once we begin writing tests for it. Sorting these details out from the beginning goes a long way.</p>
+
+<pre><code class="js">// PageControlView.js
+var PageControlView = Backbone.View.extend({});
+module.exports = function (opt) {
+    return new PageControlView(opt);
+}
+module.exports.getClass = function () {
+    return PageControlView;
+}
+
+// SomeOtherModule.js
+var pageControlView = require('./js/views/pageControl')({ prop: prop });
+var PageControlView = require('./js/views/pageControl').getClass();
+</code></pre>
+
+<p>The getClass() method is ofcourse syntactic sugar for returning a reference to the constructor, which we'll be needing. Inlining instantiation this way can be really handy as well.</p>
+
+<p>CommonJS modules can be bundled together into a single JavaScript file for use by the client-side using the <a href="http://browserify.org/">browserify</a> node module.</p>
+
+<p>If you use the Underscore templates, you will also going to need the <a href="https://www.npmjs.com/package/brfs">brfs transform</a>, which browserify can process your modules with, to compile your templates into JavaScript code that can then be included as a CommonJS module.</p>
+
+<p>We can then include templates in our modules like this,</p>
+
+<pre><code class="js">var fs = require('fs');
+var pagesTmp = fs.readFileSync(__dirname + '/../templates/pages.html', 'utf8');
+</code></pre>
+
+<p>and browserify will inline the compiled JavaScript, living the code in a form that will still work in the console at the same time, which as we'll see will be very handy.</p>
+
+<p>Here's how to install browserify with brfs and an example of bundling your code using them:</p>
+
+<pre><code class="bash">npm install -g browserify # Install browserify globally
+npm install --save-dev brfs # Install brfs
+browserify -t brfs js/main.js &gt; bundle.js # Create your bundle
+</code></pre>
+
+<p>Grunt plugins also exist that can make the bundling process automatic.</p>
+
+<h3 id="setting-up-an-event-bus">Setting up an event-bus</h3>
+
+<p>Writing maintanable code also means having the freedom to switch between different implementations of modules without breaking the code or need to rewrite a large part of it.</p>
+
+<p>The way our modules interact with each other play the most significant role in this case. Fortunately, Backbone is heavily based on events and message passing and we can utilize this behaviour right away.</p>
+
+<p>A module that uses events, does not need to be tied to the behaviour of another. It can simply notify all of its subscribers that something significant has happened and let them respond to it on their own.</p>
+
+<p>A quick solution is to create an event-bus, a simplified pub/sub implementation, that will be passed as dependency in each module.
+That way we can trigger events from and subscribe to, our event-bus. Here's an example:</p>
+
+<pre><code class="js">var eventbus = _.extend({}, Backbone.Events);
+
+var SomeView = Backbone.View.extend({
+    initialize: function(opt) {
+        this.eventbus = opt.eventbus;
+        this.listenTo(this.eventbus, 'widget:closed', this.doSmth);
+    },
+    events: {
+        'click #submit': 'clicked'
+    },
+    clicked: function() {
+        this.eventbus.trigger('someview:submit:clicked');
+    },
+    doSmth: function() {
+        // ...
+    }
+});
+</code></pre>
+
+<p>We don't have to worry about the behaviour of other objects anymore, as each module can exist on its own.</p>
+
+<p>A whole lot can be written about programming with events, about their correct use and their flow or direction but these are beyond the scope of this post.</p>
+
+<h2 id="writing-the-tests">Writing the tests</h2>
+
+<p>Having tried a couple combinations of tools and test frameworks, I ended up using the <a href="http://mochajs.org">Mocha</a>-<a href="http://sinonjs.org">Sinon</a>-<a href="http://chaijs.com">Chai</a> stack and test my code from the command-line.</p>
+
+<pre><code class="bash">npm install -g mocha 
+npm install --save-dev sinon chai jsdom@4.2.0
+</code></pre>
+
+<p>Sinon is used for things like mocks, spies and stubs, Chai equips us with any assertion style one might need, and Mocha is used as a test-runner that can be configured to suit every need.</p>
+
+<p>My focus is placed more on the way data is handled by the code and the way each module interacts with each other, as this is the place where most of my bugs occur most of the time.</p>
+
+<p>A DOM implementation will be required however, should we decide to test our Backbone Views, and as this is normally provided by the browser, we would need to an implementation that is &ldquo;digestible&rdquo; by node, the <a href="https://github.com/tmpvar/jsdom">jsdom</a>.</p>
+
+<h3 id="spying-on-backbone-events">Spying on Backbone events</h3>
+
+<p>Sinon provides us with <a href="http://sinonjs.org/docs/#spies">spies</a>, a very useful feature, that helps us learn things like how many times the method we're spying on has been called during a test, with what arguments etc.</p>
+
+<p>Spies, according to the <a href="http://sinonjs.org/docs/">docs</a>, work by wrapping our method in another function and by storing a reference to the original one so that we can restore it later.</p>
+
+<p>The following is a trivial example, using the widget object from backbone inheritance section, which passes our test:</p>
+
+<pre><code class="js">var widget = new Widget();
+var render = sinon.spy(widget, 'render');
+widget.render();
+assert.isTrue(render.spy.called);
+</code></pre>
+
+<p>Let's now try to trigger a change event in widget's associated model:</p>
+
+<pre><code class="js">var render = sinon.spy(widget, 'render');
+widget.model.trigger('change');
+assert.isTrue(render.spy.called);
+</code></pre>
+
+<p>No matter how many times we may try running this last test however, it will always fail to pass our assertion.</p>
+
+<p>If we take a look back at the definition of Widget, we can see that is listenTo called inside initialize:</p>
+
+<pre><code class="js">var Widget = Backbone.View.extend({
+    initialize: function (opt) {
+        this.listenTo(this.model, 'change', this.render);
+    },
+    // ...
+</code></pre>
+
+<p>Sinon fails to wrap the callback function, as this occurs inside initialize, which is called by the constructor (at instantiation) before the wrapping takes place. As a result Backbone will keep calling the original function and not the spy we have created.</p>
+
+<p>As functions in JavaScript are first-class objects, <em>passed by reference</em>, Sinon may wrap the render method succesfully, but the reference to the originl function has been set into memory and used by Backbone events code and will not be affected.</p>
+
+<p>One solution would be to redefine initialize in our tests, calling sinon spy inside it, but I prefer the following which is even more terse:</p>
+
+<pre><code class="js">var Widget = require('../js/views/widget').getClass();
+var spy = sinon.spy(Widget.prototype, 'render');
+var widget = new Widget({
+    model: require('../js/model/model')() 
+});
+widget.model.trigger('change');
+assert.isTrue(spy.called);
+</code></pre>
+
+<p>We create a reference to the constructor and use the Sinon spy to wrap Widget's prototype render function, <strong>before</strong> instantiating our new widget object. Our test now succesfully passes our assertion!</p>
+
+<p>Spying on the Widget.prototype.render method before instantiation from the very beginning, ensures that this will be the reference Backbone will be using for our function.</p>
+
+<p>We would be unable to figure all that out however, had we not taken the time to understand the internals of Backbone and how its inheritance model works.</p>
+
+<p>These last two snippets also demonstrate the versality of the module pattern mentioned in the module management section: instantiating with a single require statement in the case of the model, and requiring the constructor function, in the case of Widget.</p>
+
+<h2 id="closing-thoughts">Closing thoughts</h2>
+
+<p>We have examined several ways one can write testable code with Backbone.js and discussed couple of best practices that can make the process easier.</p>
+
+<p>Deep understanding of the dynamic nature of JavaScript along with knowledge on how frameworks we use work, is of vast importance in writing tests and help us discover bugs easier.</p>
+
+<p>Testing leads in building maintainable applications and it immediately puts us in the right path towards accomplishing exactly that.</p>
+
+<p>Writing testable code on top of the concise, well-written code of Backbone.js can help us boost our development workflow and productivity and be ready to tackle any challenge that might arise.</p>
+ 
+</div>
+
+<div class="post-footer">
+<ul class="post-other-posts">
+<li>Previous post: <a class="post-previous" href="http://nikitasfr.com/blog/2015/04/05/front-end-tools-and-practices/"> Front-end tools and practices for efficient web development</a></li>
+<div class="disqus-container">
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'nikitasfr';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</div>
+
+<div id="post-footer-bottom">
+<h3 class="post-archives"><a href="http://nikitasfr.com/blog/archives">Post Archives</a></h3>
+</div>
+
+</div> <!-- / post-footer --> 
+</article>
+</div>
+
+</div>
+
+<div id="footer-push"></div>
+</div>
+</div>
+
+<div id="footer">
+<p id="copy">&copy;2015 Nikitas Frantzeskakis</p> 
+</div>
+
+</body>
+</html>
