@@ -13,6 +13,16 @@ $post-meta-color: $base-font-color;
 
 $post-footer-color: tint(#2B1D12,15%);
 
+.disqus-container {
+    padding-top:1em;
+}
+
+#post-footer-bottom {
+    padding-top:1em;
+    padding-bottom:1em;
+    text-align: center;
+}
+
 h1.post-title {
     @include adjust-font-size-to(23px);
 
@@ -50,7 +60,7 @@ h1.post-title {
         //color:#4E2923;
         color: shade(#FF4C05,50%); 
         //@include margin-leader(1);
-        padding-top:1.3em;
+        padding-top:.8em;
         //@include adjust-font-size-to(16.000px);
         font-weight:600;
     }
@@ -140,7 +150,7 @@ a.post-permalink {
         //padding-bottom:$base-font-size;
 
         li {
-            list-style-type:disc;
+            list-style-type:none;
                         //font-family: 'Open Sans', sans-serif;
             font-weight:bold;
             a { 

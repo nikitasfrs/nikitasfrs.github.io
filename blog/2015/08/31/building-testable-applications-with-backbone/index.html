@@ -1,17 +1,69 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-    <title><![CDATA[Nikitas Frantzeskakis]]></title>
-    <link href="http://nikitasfr.com/atom.xml" rel="self"/>
-    <link href="http://nikitasfr.com/"/>
-    <updated>2015-08-31T08:02:51+00:00</updated>
-    <id>http://nikitasfr.com/</id>
-        <generator uri="http://sculpin.io/">Sculpin</generator>
-            <entry>
-            <title type="html"><![CDATA[Building testable applications with Backbone.js]]></title>
-            <link href="http://nikitasfr.com/blog/2015/08/31/building-testable-applications-with-backbone/"/>
-            <updated>2015-08-31T00:00:00+00:00</updated>
-            <id>http://nikitasfr.com/blog/2015/08/31/building-testable-applications-with-backbone/</id>
-            <content type="html"><![CDATA[<p>Piecing libraries together to quickly produce a result can be one thing; building maintainable applications and test suites around them however, can be quite another.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="author" content="Nikitas Frantzeskakis" />
+<title>Building testable applications with Backbone.js - Nikitas Frantzeskakis</title>
+<link href="http://nikitasfr.com/assets/dist/css/style.css" rel="stylesheet" />
+<link href="http://nikitasfr.com/atom.xml" rel="alternate" title="Nikitas Frantzeskakis" type="application/atom+xml" />
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css" />
+<link href="http://nikitasfr.com/assets/vendor/highlightjs/styles/github.css" rel="stylesheet" type="text/css" />
+<script src="http://nikitasfr.com/assets/vendor/highlightjs/highlight.pack.js"></script>
+
+<!-- Facebook -->
+<meta property="og:title" content="Building testable applications with Backbone.js (Nikitas Frantzeskakis)" />
+<meta property="og:url" content="http://nikitasfr.com/blog/2015/08/31/building-testable-applications-with-backbone/" />
+<meta property="og:type" content="article" />
+<meta property="og:description" content="Piecing libraries together to quickly produce a result can be one thing; building maintainable applications and test suites around them however, can be quite another." />
+<!-- Twitter -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Building testable applications with Backbone.js (Nikitas Frantzeskakis)" />
+<meta name="twitter:description" content="Piecing libraries together to quickly produce a result can be one thing; building maintainable applications and test suites around them however, can be quite another." />
+<meta name="twitter:site" content="@nikitasfrs" />
+
+<script>
+hljs.initHighlightingOnLoad();                                 
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-61546505-1', 'auto');
+ga('send', 'pageview');
+</script>
+</head>
+<body>
+<div id="container">
+<div id="header-wrap">
+<div id="header">
+<div id="logo">
+<a href="http://nikitasfr.com"><img src="http://nikitasfr.com/assets/images/logo2.png"/></a>
+</div>
+<nav>
+<a href="http://nikitasfr.com/">Blog</a>
+<a href="http://nikitasfr.com/about/">About</a>
+<a href="https://github.com/nikitasfrs">GitHub</a>
+<a href="http://nikitasfr.com/blog/tags/">Tags</a>
+<a href="mailto:nikitas.frantzeskakis@gmail.com">Email</a>
+<a href="https://twitter.com/nikitasfrs">Twitter</a>
+<a href="http://nikitasfr.com/atom.xml">Feed</a>
+</nav>
+</div>
+</div>
+
+<div id="content-wrap">
+<div id="article-wrap">
+<article>
+<div class="top-corner"></div>
+<div class="post-heading">
+<h1 class="post-title">Building testable applications with Backbone.js</h1>
+<p class="post-meta"> August 31, 2015 
+ in <a href="http://nikitasfr.com/blog/tags/javascript/">javascript</a><span>, </span><a href="http://nikitasfr.com/blog/tags/backbone/">backbone</a><span>, </span><a href="http://nikitasfr.com/blog/tags/testing/">testing</a></p></div>
+
+<div class="post-body">
+<p>Piecing libraries together to quickly produce a result can be one thing; building maintainable applications and test suites around them however, can be quite another.</p>
 
 <p>The former approach leads in spending endless hours of frustration and mismanagement, while the latter in the freedom or mastery of &ldquo;bending&rdquo; tools and abstractions to serve business requirements in a precise way, an ability that can be discerned in skilled engineers.</p>
 
@@ -248,82 +300,45 @@ assert.isTrue(spy.called);
 <p>Testing leads in building maintainable applications and it immediately puts us in the right path towards accomplishing exactly that.</p>
 
 <p>Writing testable code on top of the concise, well-written code of Backbone.js can help us boost our development workflow and productivity and be ready to tackle any challenge that might arise.</p>
-]]></content>
-        </entry>
-            <entry>
-            <title type="html"><![CDATA[Front-end tools and practices for efficient web development]]></title>
-            <link href="http://nikitasfr.com/blog/2015/04/05/front-end-tools-and-practices/"/>
-            <updated>2015-04-05T00:00:00+00:00</updated>
-            <id>http://nikitasfr.com/blog/2015/04/05/front-end-tools-and-practices/</id>
-            <content type="html"><![CDATA[<p>A client-side workflow plays a significant part in creating optimized and maintainable websites. Here's a small overview of the client-side stack I have recently been using.</p>
+ 
+</div>
 
-<h3 id="semantic-markup">Semantic markup</h3>
+<div class="post-footer">
+<ul class="post-other-posts">
+<li>Previous post: <a class="post-previous" href="http://nikitasfr.com/blog/2015/04/05/front-end-tools-and-practices/"> Front-end tools and practices for efficient web development</a></li>
+<div class="disqus-container">
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'nikitasfr';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</div>
 
-<p>I use <a href="http://twig.sensiolabs.org/">Twig</a>, a powerful templating engine and I keep my HTML documents as pure and semantic as I can. I often remind myself to keep things simple and try to separate the content from its styling or presentation, the former belonging to the HTML document, while the latter in the CSS file.</p>
+<div id="post-footer-bottom">
+<h3 class="post-archives"><a href="http://nikitasfr.com/blog/archives">Post Archives</a></h3>
+</div>
 
-<p>CSS frameworks served me well in the past especially for prototyping, however conforming totally to their way of doing things without having spent time to create and tune my own workflow, resulted most of the times in a non-semantic markup which was hard to maintain.</p>
+</div> <!-- / post-footer --> 
+</article>
+</div>
 
-<p>Having to edit HTML files to change grid settings for a specific element by adding or removing the appropriate classes for example as some framework dictates can be really inconvenient, especially when these templates get splitted into many parts and processed by the backend before they get served to the client.</p>
+</div>
 
-<p>Using semantic markup is a simple first step that results in making our views maintainable and aids in keeping our structure clean so that we can utilize the power our templating engine(s) provides us with. Each element thus gets assigned an ID or class that describes the content it represents, taking care to avoid using identifiers related to its presentation.
-<!--more--></p>
+<div id="footer-push"></div>
+</div>
+</div>
 
-<h3 id="css-pre-processor">CSS pre-processor</h3>
+<div id="footer">
+<p id="copy">&copy;2015 Nikitas Frantzeskakis</p> 
+</div>
 
-<p>A CSS pre-processor supports many interesting features that are currently missing from the original CSS and provides things like variables, loops, mixins and functions so one can really tune and automate the way things get done with stylesheets in general.</p>
-
-<p>Since automation is always good, and as I've been reading many good things about <a href="http://sass-lang.com/">Sass</a>, I decided to give it a try. There's also a strong community supporting it and a huge set of libraries and frameworks written in Sass. The normal CSS syntax can also be used so it can be learned pretty quickly.</p>
-
-<p>Using a CSS pre-processor you have the ability to create stylesheets in many files (partials) which can later be merged to a single final minified CSS file that would normally be served to the client.</p>
-
-<h3 id="semantic-grid">Semantic grid</h3>
-
-<p>Having a grid we can set elements in, each of them taking up a specified amount of columns is a very handy abstraction. There are two criteria that I like to take into consideration when choosing a grid framework or library: the freedom to maintain semantic structure and compatibility with our CSS pre-processor of choice, in my case Sass.</p>
-
-<p>I have been very happy using <a href="http://susydocs.oddbird.net/en/latest/">Susy</a>, a grid framework written in Sass, that does all the math for you and lets you create awesome layouts. It is completely unopinionated and does not get in your way. 
-Using Susy, changing our layout and column sizes becomes only a matter of changing the values for a couple of variables in our Sass files, so simple!</p>
-
-<p>Another point where it really shines, is the way it handles media queries which relies on the amazing Sass library, <a href="http://breakpoint-sass.com/">Breakpoint</a>. Every element gets assigned different amount of columns for different breakpoints whenever we need to apply changes for different viewports and this is extremely helpful.</p>
-
-<h3 id="javascript-modules">Javascript modules</h3>
-
-<p>I have been looking for an easy and extendable way to include and manage Javascript in my web applications, which can be optimized for mobile phones. Many backend frameworks have components that let you manage and include Javascript files in your application, however this is not always an optimal or convenient option for a non-trivial project. What would happen if at some point we need to change the server-side technology?</p>
-
-<p>Separating our code into multiple files really helps but then having to load files synchronously via multiple script tags creates performace issues, DOM content will not load until all the tags defined in the head section complete loading first, which becomes more evident when the site gets accessed by mobile phones and slow connections. Simple workarounds such as placing the script tags at the end exist, though most of the times these are not really the answer.</p>
-
-<p>Having a completely independent way to include, merge and minify your code, and by using the very useful <a href="http://www.adequatelygood.com/JavaScript-Module-Pattern-In-Depth.html">module pattern</a>, you can write more efficient modular code, while at the same time minimizing the coupling between client and server code and decreasing load times.</p>
-
-<p>To handle all these issues I use <a href="http://requirejs.org/">RequireJS</a> a Javascript module loader. Its AMD web module support gives you the power to split your code into separate files that get loaded asynchronously. Code can be reused and all our files can be cleanly organised.</p>
-
-<p>RequireJS comes with its own optimizer and can be used to build your project into a single minified file (or a couple of minified files depending on your configuration and the way you prefer to bundle your project&mdash;possibilities are endless.)
-Structuring our project with RequireJS we are able write our code into many separate modules and we can minimize the requests to the server by building the project into a single file for the production environment whenever we need to.</p>
-
-<h3 id="build-process">Build process</h3>
-
-<p>Introducing these tools to make our lives easier comes at a price, and a quick way to rebuild our project whenever we make changes soon will soon become essential. We have to be able to listen for changes in our scripts and in our stylesheets and perform the necessary tasks that need to be performed for all the different environments we decide to create our projects in.</p>
-
-<p>Fortunately tools exist for exactly this purpose and the one I have been using is <a href="http://gruntjs.com/">Grunt</a>, a Javascript task-runner that can be installed and managed via <a href="https://www.npmjs.com/">npm</a>, the <a href="https://nodejs.org/">Node.js</a> package manager.</p>
-
-<p>Grunt supports plugins that cover almost every need, it is really simple to use, and gives you the ability to register many tasks covering every need. I am even using it right now in composing this post, letting it sit quietly in the background and listen for changes in my markdown files, awaiting to build the project every time I make changes, through the
-<a href="https://github.com/florianeckerstorfer/grunt-sculpin">grunt-sculpin</a>
-plugin which takes care running the sculpin command-line tool.</p>
-
-<h3 id="closing-thoughts">Closing thoughts</h3>
-
-<p>Creating a workflow for the front-end, keeping it separated from the server-side technologies, forms a necessary foundation for all those changes and requirements that might suddenly arise, so we can keep our focus on the essence or functionality our project needs.</p>
-
-<p>As a result, the whole web stack gets easier to manage and everything finds its proper place in the spectrum of technologies we are using. Our server-side code becomes lean and is used for the functionality, database access
-and every other aspect we need our server to handle, while our client-side stack ensures us that information gets presented in a maintainable, optimized and responsive way.</p>
-]]></content>
-        </entry>
-            <entry>
-            <title type="html"><![CDATA[First post]]></title>
-            <link href="http://nikitasfr.com/blog/2014/12/31/first-post/"/>
-            <updated>2014-12-31T00:00:00+00:00</updated>
-            <id>http://nikitasfr.com/blog/2014/12/31/first-post/</id>
-            <content type="html"><![CDATA[<p>My blog is finally live, and I am very excited! Sculpin is very simple to use and I find the way of creating blog posts simply by editing a markdown file and pushing changes to a repository, really convenient.</p>
-
-<p>At this point I can only think of this blog and website as way of &ldquo;leaving a trail behind&rdquo; in the form of blog posts, both for myself by having a handy way to collect or revise information for future reference and for anyone else that might find something useful in these.</p>
-]]></content>
-        </entry>
-    </feed>
+</body>
+</html>
