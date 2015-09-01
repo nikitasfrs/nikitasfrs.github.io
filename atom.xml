@@ -3,7 +3,7 @@
     <title><![CDATA[Nikitas Frantzeskakis]]></title>
     <link href="http://nikitasfr.com/atom.xml" rel="self"/>
     <link href="http://nikitasfr.com/"/>
-    <updated>2015-08-31T08:15:13+00:00</updated>
+    <updated>2015-09-01T06:09:17+00:00</updated>
     <id>http://nikitasfr.com/</id>
         <generator uri="http://sculpin.io/">Sculpin</generator>
             <entry>
@@ -207,7 +207,7 @@ assert.isTrue(render.spy.called);
 
 <p>No matter how many times we may try running this last test however, it will always fail to pass our assertion.</p>
 
-<p>If we take a look back at the definition of Widget, we can see that is listenTo called inside initialize:</p>
+<p>If we take a look back at the definition of Widget, we can see that listenTo is called inside initialize:</p>
 
 <pre><code class="js">var Widget = Backbone.View.extend({
     initialize: function (opt) {
