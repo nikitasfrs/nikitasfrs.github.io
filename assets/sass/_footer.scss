@@ -18,12 +18,4 @@ body > footer {
         @include padding-leader(1/5, 11.459px);
         @include padding-trailer(1/5, 11.459px);
     }
-    & > * {
-        //padding-left:3em;
-    }
-    & > p {
-        padding-left:0;
-     //   @include span(12);
-    } 
-
 }

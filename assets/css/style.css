@@ -270,16 +270,23 @@ html {
 }
 
 /* line 43, ../sass/_base-layout.scss */
+#main, article {
+  -webkit-box-shadow: 1px 1px 2px 0px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow: 1px 1px 2px 0px rgba(50, 50, 50, 0.75);
+  box-shadow: 1px 1px 2px 0px rgba(50, 50, 50, 0.75);
+}
+
+/* line 49, ../sass/_base-layout.scss */
 article + article {
   margin-top: 1em;
 }
 
-/* line 50, ../sass/_base-layout.scss */
+/* line 56, ../sass/_base-layout.scss */
 body {
   background-color: #959AA3;
 }
 
-/* line 54, ../sass/_base-layout.scss */
+/* line 60, ../sass/_base-layout.scss */
 img {
   max-width: 100%;
 }
@@ -431,27 +438,27 @@ h1.post-title a:hover {
   padding-top: 1em;
   color: #252629;
 }
-/* line 63, ../sass/_post.scss */
+/* line 64, ../sass/_post.scss */
 .post-body strong {
   font-weight: bold;
 }
-/* line 67, ../sass/_post.scss */
+/* line 68, ../sass/_post.scss */
 .post-body h2 {
   color: #802603;
   padding-top: .8em;
   font-weight: 600;
 }
-/* line 76, ../sass/_post.scss */
+/* line 77, ../sass/_post.scss */
 .post-body ul {
   padding-left: 5%;
   padding-top: 16px;
 }
-/* line 80, ../sass/_post.scss */
+/* line 81, ../sass/_post.scss */
 .post-body ul li {
   list-style-type: disc;
   list-style-position: inside;
 }
-/* line 86, ../sass/_post.scss */
+/* line 87, ../sass/_post.scss */
 .post-body a {
   color: #2C5BAD;
   text-decoration: none;
@@ -460,48 +467,48 @@ h1.post-title a:hover {
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
 }
-/* line 89, ../sass/_post.scss */
+/* line 90, ../sass/_post.scss */
 .post-body a:hover {
   color: #96add6;
 }
-/* line 95, ../sass/_post.scss */
+/* line 96, ../sass/_post.scss */
 .post-body ol li {
   list-style-type: decimal;
 }
 
-/* line 100, ../sass/_post.scss */
+/* line 101, ../sass/_post.scss */
 #posts-index {
   padding-bottom: 23px;
   padding-bottom: 1.4375rem;
 }
 
-/* line 105, ../sass/_post.scss */
+/* line 106, ../sass/_post.scss */
 a.post-permalink {
-  border: 1px solid #252629;
+  border: 1px solid #3b3c3e;
   padding: 2px;
   text-transform: lowercase;
   background-color: #dbdbdb;
   color: black;
   text-decoration: none;
 }
-/* line 112, ../sass/_post.scss */
+/* line 113, ../sass/_post.scss */
 a.post-permalink:visited {
   text-decoration: none;
 }
 
-/* line 117, ../sass/_post.scss */
+/* line 118, ../sass/_post.scss */
 .post-meta {
   padding-top: .3em;
   color: #252629;
   font-weight: bold;
   padding-bottom: 1em;
-  border-bottom: 1px solid #252629;
+  border-bottom: 1px solid #3b3c3e;
 }
-/* line 126, ../sass/_post.scss */
+/* line 127, ../sass/_post.scss */
 .post-meta span {
   color: #2C5BAD;
 }
-/* line 130, ../sass/_post.scss */
+/* line 131, ../sass/_post.scss */
 .post-meta a {
   font-weight: normal;
   color: #2C5BAD;
@@ -510,48 +517,48 @@ a.post-permalink:visited {
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
 }
-/* line 133, ../sass/_post.scss */
+/* line 134, ../sass/_post.scss */
 .post-meta a:hover {
   color: #567cbd;
 }
 
-/* line 140, ../sass/_post.scss */
+/* line 141, ../sass/_post.scss */
 article > footer {
-  border-top: 1px solid #252629;
+  border-top: 1px solid #3b3c3e;
   margin-top: 1em;
   color: #4b3f36;
 }
-/* line 141, ../sass/_post.scss */
+/* line 142, ../sass/_post.scss */
 article > footer .read-more {
   margin-top: .75em;
 }
-/* line 148, ../sass/_post.scss */
+/* line 149, ../sass/_post.scss */
 article > footer a {
   color: #28529c;
   text-decoration: none;
 }
-/* line 151, ../sass/_post.scss */
+/* line 152, ../sass/_post.scss */
 article > footer a:hover {
   color: #28529c;
 }
-/* line 156, ../sass/_post.scss */
+/* line 157, ../sass/_post.scss */
 article > footer ul.post-other-posts {
   padding-top: 1em;
 }
-/* line 160, ../sass/_post.scss */
+/* line 161, ../sass/_post.scss */
 article > footer ul.post-other-posts li {
   list-style-type: none;
   font-weight: bold;
 }
-/* line 164, ../sass/_post.scss */
+/* line 165, ../sass/_post.scss */
 article > footer ul.post-other-posts li a {
   font-weight: normal;
 }
-/* line 169, ../sass/_post.scss */
+/* line 170, ../sass/_post.scss */
 article > footer ul.post-other-posts li + li {
   margin-top: 0.5em;
 }
-/* line 173, ../sass/_post.scss */
+/* line 174, ../sass/_post.scss */
 article > footer ul.post-other-posts a:hover {
   text-decoration: underline;
 }
@@ -644,8 +651,4 @@ body > footer p {
   padding-top: 0.2875rem;
   padding-bottom: 5px;
   padding-bottom: 0.2875rem;
-}
-/* line 24, ../sass/_footer.scss */
-body > footer > p {
-  padding-left: 0;
 }

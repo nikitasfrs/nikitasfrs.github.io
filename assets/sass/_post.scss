@@ -1,7 +1,7 @@
 /* Post module */
 
 //$post-border-color: #330F01;
-$post-border-color: $base-font-color;
+$post-border-color: tint($base-font-color,10%);
 $post-link-color: #2C5BAD;
 
 $post-title-color: #070D19;
@@ -60,6 +60,7 @@ h1.post-title {
     //@include padding-leader(1); 
     padding-top:1em;
     color: $base-font-color;
+    
     strong {
         font-weight: bold;
     }
