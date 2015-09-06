@@ -37,30 +37,33 @@ ga('send', 'pageview');
 <body>
 <div id="container">
 <div id="header-wrap">
-<div id="header">
+<header>
 <div id="logo">
-<a href="http://nikitasfr.com"><img src="http://nikitasfr.com/assets/images/logo2.png"/></a>
+<a href="http://nikitasfr.com"><img src="http://nikitasfr.com/assets/images/logo2.png" alt="Nikitas Frantzeskakis"/></a>
 </div>
-<nav>
-<a href="http://nikitasfr.com/">Blog</a>
-<a href="http://nikitasfr.com/about/">About</a>
-<a href="https://github.com/nikitasfrs">GitHub</a>
-<a href="http://nikitasfr.com/blog/tags/">Tags</a>
-<a href="mailto:nikitas.frantzeskakis@gmail.com">Email</a>
-<a href="https://twitter.com/nikitasfrs">Twitter</a>
-<a href="http://nikitasfr.com/atom.xml">Feed</a>
-</nav>
+<div id="nav-links">
+<ul class="main-nav">
+<li><a href="http://nikitasfr.com/">Blog</a></li>
+<li><a href="http://nikitasfr.com/about/">About</a></li>
+<li><a href="https://github.com/nikitasfrs">GitHub</a></li>
+<li><a href="http://nikitasfr.com/blog/tags/">Tags</a></li>
+<li><a href="mailto:nikitas.frantzeskakis@gmail.com">Email</a></li>
+<li><a href="https://twitter.com/nikitasfrs">Twitter</a></li>
+<li><a href="http://nikitasfr.com/atom.xml" rel="subscribe-atom" title="Subscribe via Atom">Feed</a></li>
+</ul>
 </div>
+</header>
 </div>
 
 <div id="content-wrap">
-<div id="article-wrap">
-<article>
-<div class="top-corner"></div>
+<article role="article">
+<header>
 <div class="post-heading">
 <h1 class="post-title">Building testable applications with Backbone.js</h1>
-<p class="post-meta"> August 31, 2015 
- in <a href="http://nikitasfr.com/blog/tags/javascript/">javascript</a><span>, </span><a href="http://nikitasfr.com/blog/tags/backbone/">backbone</a><span>, </span><a href="http://nikitasfr.com/blog/tags/testing/">testing</a></p></div>
+<p class="post-meta"><time datetime="2015-08-31">August 31, 2015</time>
+ in <a href="http://nikitasfr.com/blog/tags/javascript/">javascript</a><span>, </span><a href="http://nikitasfr.com/blog/tags/backbone/">backbone</a><span>, </span><a href="http://nikitasfr.com/blog/tags/testing/">testing</a></p>
+</div>
+</header>
 
 <div class="post-body">
 <p>Piecing libraries together to quickly produce a result can be one thing; building maintainable applications and test suites around them however, can be quite another.</p>
@@ -303,10 +306,14 @@ assert.isTrue(spy.called);
  
 </div>
 
-<div class="post-footer">
+<footer>
 <ul class="post-other-posts">
 <li>Previous post: <a class="post-previous" href="http://nikitasfr.com/blog/2015/04/05/front-end-tools-and-practices/"> Front-end tools and practices for efficient web development</a></li>
-<div class="disqus-container">
+</footer> <!-- / post-footer -->
+</article>
+
+<div id="disqus-wrap">
+<section>
 <div id="disqus_thread"></div>
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
@@ -320,25 +327,22 @@ assert.isTrue(spy.called);
     })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</section>
 </div>
 
-<div id="post-footer-bottom">
+<nav role="navigation" id="nav-archives">
 <h3 class="post-archives"><a href="http://nikitasfr.com/blog/archives">Post Archives</a></h3>
-</div>
-
-</div> <!-- / post-footer --> 
-</article>
-</div>
+</nav>
+ 
 
 </div>
 
 <div id="footer-push"></div>
 </div>
-</div>
 
-<div id="footer">
+<footer>
 <p id="copy">&copy;2015 Nikitas Frantzeskakis</p> 
-</div>
+</footer>
 
 </body>
 </html>

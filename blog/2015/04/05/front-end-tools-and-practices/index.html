@@ -37,30 +37,33 @@ ga('send', 'pageview');
 <body>
 <div id="container">
 <div id="header-wrap">
-<div id="header">
+<header>
 <div id="logo">
-<a href="http://nikitasfr.com"><img src="http://nikitasfr.com/assets/images/logo2.png"/></a>
+<a href="http://nikitasfr.com"><img src="http://nikitasfr.com/assets/images/logo2.png" alt="Nikitas Frantzeskakis"/></a>
 </div>
-<nav>
-<a href="http://nikitasfr.com/">Blog</a>
-<a href="http://nikitasfr.com/about/">About</a>
-<a href="https://github.com/nikitasfrs">GitHub</a>
-<a href="http://nikitasfr.com/blog/tags/">Tags</a>
-<a href="mailto:nikitas.frantzeskakis@gmail.com">Email</a>
-<a href="https://twitter.com/nikitasfrs">Twitter</a>
-<a href="http://nikitasfr.com/atom.xml">Feed</a>
-</nav>
+<div id="nav-links">
+<ul class="main-nav">
+<li><a href="http://nikitasfr.com/">Blog</a></li>
+<li><a href="http://nikitasfr.com/about/">About</a></li>
+<li><a href="https://github.com/nikitasfrs">GitHub</a></li>
+<li><a href="http://nikitasfr.com/blog/tags/">Tags</a></li>
+<li><a href="mailto:nikitas.frantzeskakis@gmail.com">Email</a></li>
+<li><a href="https://twitter.com/nikitasfrs">Twitter</a></li>
+<li><a href="http://nikitasfr.com/atom.xml" rel="subscribe-atom" title="Subscribe via Atom">Feed</a></li>
+</ul>
 </div>
+</header>
 </div>
 
 <div id="content-wrap">
-<div id="article-wrap">
-<article>
-<div class="top-corner"></div>
+<article role="article">
+<header>
 <div class="post-heading">
 <h1 class="post-title">Front-end tools and practices for efficient web development</h1>
-<p class="post-meta"> April 5, 2015 
- in <a href="http://nikitasfr.com/blog/tags/web-development/">web-development</a><span>, </span><a href="http://nikitasfr.com/blog/tags/front-end/">front-end</a></p></div>
+<p class="post-meta"><time datetime="2015-04-05">April 5, 2015</time>
+ in <a href="http://nikitasfr.com/blog/tags/web-development/">web-development</a><span>, </span><a href="http://nikitasfr.com/blog/tags/front-end/">front-end</a></p>
+</div>
+</header>
 
 <div class="post-body">
 <p>A client-side workflow plays a significant part in creating optimized and maintainable websites. Here's a small overview of the client-side stack I have recently been using.</p>
@@ -69,12 +72,13 @@ ga('send', 'pageview');
 
 <p>I use <a href="http://twig.sensiolabs.org/">Twig</a>, a powerful templating engine and I keep my HTML documents as pure and semantic as I can. I often remind myself to keep things simple and try to separate the content from its styling or presentation, the former belonging to the HTML document, while the latter in the CSS file.</p>
 
+<!--more-->
+
 <p>CSS frameworks served me well in the past especially for prototyping, however conforming totally to their way of doing things without having spent time to create and tune my own workflow, resulted most of the times in a non-semantic markup which was hard to maintain.</p>
 
 <p>Having to edit HTML files to change grid settings for a specific element by adding or removing the appropriate classes for example as some framework dictates can be really inconvenient, especially when these templates get splitted into many parts and processed by the backend before they get served to the client.</p>
 
-<p>Using semantic markup is a simple first step that results in making our views maintainable and aids in keeping our structure clean so that we can utilize the power our templating engine(s) provides us with. Each element thus gets assigned an ID or class that describes the content it represents, taking care to avoid using identifiers related to its presentation.
-<!--more--></p>
+<p>Using semantic markup is a simple first step that results in making our views maintainable and aids in keeping our structure clean so that we can utilize the power our templating engine(s) provides us with. Each element thus gets assigned an ID or class that describes the content it represents, taking care to avoid using identifiers related to its presentation.</p>
 
 <h3 id="css-pre-processor">CSS pre-processor</h3>
 
@@ -125,11 +129,15 @@ and every other aspect we need our server to handle, while our client-side stack
  
 </div>
 
-<div class="post-footer">
+<footer>
 <ul class="post-other-posts">
 <li>Next post: <a class="post-next" href="http://nikitasfr.com/blog/2015/08/31/building-testable-applications-with-backbone/">Building testable applications with Backbone.js </a></li>
 <li>Previous post: <a class="post-previous" href="http://nikitasfr.com/blog/2014/12/31/first-post/"> First post</a></li>
-<div class="disqus-container">
+</footer> <!-- / post-footer -->
+</article>
+
+<div id="disqus-wrap">
+<section>
 <div id="disqus_thread"></div>
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
@@ -143,25 +151,22 @@ and every other aspect we need our server to handle, while our client-side stack
     })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</section>
 </div>
 
-<div id="post-footer-bottom">
+<nav role="navigation" id="nav-archives">
 <h3 class="post-archives"><a href="http://nikitasfr.com/blog/archives">Post Archives</a></h3>
-</div>
-
-</div> <!-- / post-footer --> 
-</article>
-</div>
+</nav>
+ 
 
 </div>
 
 <div id="footer-push"></div>
 </div>
-</div>
 
-<div id="footer">
+<footer>
 <p id="copy">&copy;2015 Nikitas Frantzeskakis</p> 
-</div>
+</footer>
 
 </body>
 </html>

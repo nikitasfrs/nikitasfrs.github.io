@@ -36,30 +36,35 @@ ga('send', 'pageview');
 <body>
 <div id="container">
 <div id="header-wrap">
-<div id="header">
+<header>
 <div id="logo">
-<a href="http://nikitasfr.com"><img src="http://nikitasfr.com/assets/images/logo2.png"/></a>
+<a href="http://nikitasfr.com"><img src="http://nikitasfr.com/assets/images/logo2.png" alt="Nikitas Frantzeskakis"/></a>
 </div>
-<nav>
-<a href="http://nikitasfr.com/">Blog</a>
-<a href="http://nikitasfr.com/about/">About</a>
-<a href="https://github.com/nikitasfrs">GitHub</a>
-<a href="http://nikitasfr.com/blog/tags/">Tags</a>
-<a href="mailto:nikitas.frantzeskakis@gmail.com">Email</a>
-<a href="https://twitter.com/nikitasfrs">Twitter</a>
-<a href="http://nikitasfr.com/atom.xml">Feed</a>
-</nav>
+<div id="nav-links">
+<ul class="main-nav">
+<li><a href="http://nikitasfr.com/">Blog</a></li>
+<li><a href="http://nikitasfr.com/about/">About</a></li>
+<li><a href="https://github.com/nikitasfrs">GitHub</a></li>
+<li><a href="http://nikitasfr.com/blog/tags/">Tags</a></li>
+<li><a href="mailto:nikitas.frantzeskakis@gmail.com">Email</a></li>
+<li><a href="https://twitter.com/nikitasfrs">Twitter</a></li>
+<li><a href="http://nikitasfr.com/atom.xml" rel="subscribe-atom" title="Subscribe via Atom">Feed</a></li>
+</ul>
 </div>
+</header>
 </div>
 
 <div id="content-wrap">
 
-<article>
-    <div class="top-corner"></div>
+<!--<article>-->
+    <article role="article">
+<header>
 <div class="post-heading">
 <h1 class="post-title"><a href="http://nikitasfr.com/blog/2015/08/31/building-testable-applications-with-backbone/">Building testable applications with Backbone.js</a></h1>
-<p class="post-meta"> August 31, 2015 
- in <a href="http://nikitasfr.com/blog/tags/javascript/">javascript</a><span>, </span><a href="http://nikitasfr.com/blog/tags/backbone/">backbone</a><span>, </span><a href="http://nikitasfr.com/blog/tags/testing/">testing</a></p></div>
+<p class="post-meta"><time datetime="2015-08-31">August 31, 2015</time>
+ in <a href="http://nikitasfr.com/blog/tags/javascript/">javascript</a><span>, </span><a href="http://nikitasfr.com/blog/tags/backbone/">backbone</a><span>, </span><a href="http://nikitasfr.com/blog/tags/testing/">testing</a></p>
+</div>
+</header>
 
 <div class="post-body">
 <p>Piecing libraries together to quickly produce a result can be one thing; building maintainable applications and test suites around them however, can be quite another.</p>
@@ -69,18 +74,22 @@ ga('send', 'pageview');
 <p>While the quick approach can be our only choice in certain situations, one will eventually need to incorporate testing in the development process, sooner or later, if there's any hope of achieving anything beyond a mere prototype.</p>
 
 
-<div class="post-footer">
+</div>
+<footer>
 <p class="read-more"><a href='http://nikitasfr.com/blog/2015/08/31/building-testable-applications-with-backbone/'>Read more &#8594;</a></p>
-</div>
-</div>
+</footer>
 
 </article>
-<article>
-    <div class="top-corner"></div>
+<!--</article>-->
+<!--<article>-->
+    <article role="article">
+<header>
 <div class="post-heading">
 <h1 class="post-title"><a href="http://nikitasfr.com/blog/2015/04/05/front-end-tools-and-practices/">Front-end tools and practices for efficient web development</a></h1>
-<p class="post-meta"> April 5, 2015 
- in <a href="http://nikitasfr.com/blog/tags/web-development/">web-development</a><span>, </span><a href="http://nikitasfr.com/blog/tags/front-end/">front-end</a></p></div>
+<p class="post-meta"><time datetime="2015-04-05">April 5, 2015</time>
+ in <a href="http://nikitasfr.com/blog/tags/web-development/">web-development</a><span>, </span><a href="http://nikitasfr.com/blog/tags/front-end/">front-end</a></p>
+</div>
+</header>
 
 <div class="post-body">
 <p>A client-side workflow plays a significant part in creating optimized and maintainable websites. Here's a small overview of the client-side stack I have recently been using.</p>
@@ -89,24 +98,22 @@ ga('send', 'pageview');
 
 <p>I use <a href="http://twig.sensiolabs.org/">Twig</a>, a powerful templating engine and I keep my HTML documents as pure and semantic as I can. I often remind myself to keep things simple and try to separate the content from its styling or presentation, the former belonging to the HTML document, while the latter in the CSS file.</p>
 
-<p>CSS frameworks served me well in the past especially for prototyping, however conforming totally to their way of doing things without having spent time to create and tune my own workflow, resulted most of the times in a non-semantic markup which was hard to maintain.</p>
 
-<p>Having to edit HTML files to change grid settings for a specific element by adding or removing the appropriate classes for example as some framework dictates can be really inconvenient, especially when these templates get splitted into many parts and processed by the backend before they get served to the client.</p>
-
-<p>Using semantic markup is a simple first step that results in making our views maintainable and aids in keeping our structure clean so that we can utilize the power our templating engine(s) provides us with. Each element thus gets assigned an ID or class that describes the content it represents, taking care to avoid using identifiers related to its presentation.
-
-<div class="post-footer">
+</div>
+<footer>
 <p class="read-more"><a href='http://nikitasfr.com/blog/2015/04/05/front-end-tools-and-practices/'>Read more &#8594;</a></p>
-</div>
-</div>
+</footer>
 
 </article>
-<article>
-    <div class="top-corner"></div>
+<!--</article>-->
+<!--<article>-->
+    <article role="article">
+<header>
 <div class="post-heading">
 <h1 class="post-title"><a href="http://nikitasfr.com/blog/2014/12/31/first-post/">First post</a></h1>
-<p class="post-meta"> December 31, 2014 
-</p></div>
+<p class="post-meta"><time datetime="2014-12-31">December 31, 2014</time></p>
+</div>
+</header>
 
 <div class="post-body">
 <p>My blog is finally live, and I am very excited! Sculpin is very simple to use and I find the way of creating blog posts simply by editing a markdown file and pushing changes to a repository, really convenient.</p>
@@ -116,16 +123,16 @@ ga('send', 'pageview');
 </div>
 
 </article>
+<!--</article>-->
 
 </div>
 
 <div id="footer-push"></div>
 </div>
-</div>
 
-<div id="footer">
+<footer>
 <p id="copy">&copy;2015 Nikitas Frantzeskakis</p> 
-</div>
+</footer>
 
 </body>
 </html>

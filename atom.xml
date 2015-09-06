@@ -3,7 +3,7 @@
     <title><![CDATA[Nikitas Frantzeskakis]]></title>
     <link href="http://nikitasfr.com/atom.xml" rel="self"/>
     <link href="http://nikitasfr.com/"/>
-    <updated>2015-09-01T06:09:17+00:00</updated>
+    <updated>2015-09-06T11:47:36+00:00</updated>
     <id>http://nikitasfr.com/</id>
         <generator uri="http://sculpin.io/">Sculpin</generator>
             <entry>
@@ -261,12 +261,13 @@ assert.isTrue(spy.called);
 
 <p>I use <a href="http://twig.sensiolabs.org/">Twig</a>, a powerful templating engine and I keep my HTML documents as pure and semantic as I can. I often remind myself to keep things simple and try to separate the content from its styling or presentation, the former belonging to the HTML document, while the latter in the CSS file.</p>
 
+<!--more-->
+
 <p>CSS frameworks served me well in the past especially for prototyping, however conforming totally to their way of doing things without having spent time to create and tune my own workflow, resulted most of the times in a non-semantic markup which was hard to maintain.</p>
 
 <p>Having to edit HTML files to change grid settings for a specific element by adding or removing the appropriate classes for example as some framework dictates can be really inconvenient, especially when these templates get splitted into many parts and processed by the backend before they get served to the client.</p>
 
-<p>Using semantic markup is a simple first step that results in making our views maintainable and aids in keeping our structure clean so that we can utilize the power our templating engine(s) provides us with. Each element thus gets assigned an ID or class that describes the content it represents, taking care to avoid using identifiers related to its presentation.
-<!--more--></p>
+<p>Using semantic markup is a simple first step that results in making our views maintainable and aids in keeping our structure clean so that we can utilize the power our templating engine(s) provides us with. Each element thus gets assigned an ID or class that describes the content it represents, taking care to avoid using identifiers related to its presentation.</p>
 
 <h3 id="css-pre-processor">CSS pre-processor</h3>
 

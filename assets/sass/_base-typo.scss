@@ -12,6 +12,7 @@ $base-line-height: 23px;
 
 $rhythm-unit:"rem";
 $base-font-family: 'PT Sans', sans-serif;
+$base-title-family: 'PT Sans', sans-serif;
 
 //$base-font-color: shade(#4E2923,30%);
 $base-font-color: #252629; 
@@ -31,6 +32,7 @@ body, body * {
 
 
 h1, h2, h3 {
+    font-family: $base-title-family;
     text-rendering: optimizeLegibility; 
 }
 
@@ -56,13 +58,15 @@ pre > code {
     @include margin-leader(1, 12px);
 }
 
-p, ul li, ol li {
-    font-family: 'PT Serif', sans-serif;
-}
+
 
 
 #main, article { 
     //@include padding-trailer(1);
+    //p, ul li, ol li {
+    font-family: 'PT Serif', sans-serif;
+    //}
+
     padding-bottom:1em;
     & p + p, & ul + p {
         margin-top:0.75em;

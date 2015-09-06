@@ -6,8 +6,8 @@ $post-link-color: #2C5BAD;
 
 $post-title-color: #070D19;
 $post-title-hcolor: #28539E;
-//$post-title-font-family: 'Open Sans', sans-serif;
-$post-title-font-family: $base-font-family;
+$post-title-font-family: "Robot Slab",sans-serif;
+//$post-title-font-family: $base-font-family;
 
 $post-meta-color: $base-font-color; 
 
@@ -17,10 +17,18 @@ $post-footer-color: tint(#2B1D12,15%);
     padding-top:1em;
 }
 
-#post-footer-bottom {
+#nav-archives {
     padding-top:1em;
-    padding-bottom:1em;
+    padding-bottom:2em;
     text-align: center;
+    a {
+        color: $post-link-color;
+        text-decoration:none;
+        &:hover {
+            color: tint($post-link-color, 50%);
+        }
+        @include transition(color 0.3s);
+    }
 }
 
 h1.post-title {
@@ -129,7 +137,7 @@ a.post-permalink {
     }
 }
 
-.post-footer {
+article > footer {
     .read-more {
         margin-top:.75em;
     }

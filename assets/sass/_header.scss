@@ -7,7 +7,7 @@ $header-bg-color:#91B8BD;
     //border-bottom:1px solid #28292B;
 }
 
-#header {
+#header-wrap > header {
     @include container(40em);
     //background-color:$header-bg-color;
     //@include padding-trailer(1);

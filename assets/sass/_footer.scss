@@ -6,7 +6,7 @@
 #footer-push{ 
     clear:both;
 }
-#footer {
+body > footer {
     //@include container(45em);
     //background-color: tint(#1D242B,15%);
     //@include margin-leader(1);

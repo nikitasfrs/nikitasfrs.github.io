@@ -1,5 +1,5 @@
 /* Nav module */
-nav {
+#nav-links {
     //position:relative;
 
    // z-index:1;
@@ -14,7 +14,9 @@ nav {
 
     @include padding-leader(1/2);
     @include padding-trailer(1/2);
-    @include margin-trailer(1);
+
+    margin-bottom:1em;
+    //@include margin-trailer(1);
     //padding-left:1em;
     -webkit-box-shadow: 1px 1px 2px 0px rgba(50, 50, 50, 0.75);
     -moz-box-shadow:    1px 1px 2px 0px rgba(50, 50, 50, 0.75);
@@ -25,13 +27,14 @@ nav {
     //background:url('/hellosculpin/output_dev/assets/images/concrete_seamless.png');
     background-color: #7B8087;
     border:1px solid #28292B;
+    ul li { display:inline; }
     a {
         //color: shade(#C96F28, 10%);
         color:#E8F1FF;
         text-decoration:none;
     }    
 
-    a + a {
+    li + li {
         padding-left:1em;
     }
 }
