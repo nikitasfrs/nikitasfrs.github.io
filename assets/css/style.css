@@ -371,18 +371,18 @@ img {
 }
 
 /* Post module */
-/* line 16, ../sass/_post.scss */
+/* line 14, ../sass/_post.scss */
 .disqus-container {
   padding-top: 1em;
 }
 
-/* line 20, ../sass/_post.scss */
+/* line 18, ../sass/_post.scss */
 #nav-archives {
   padding-top: 1em;
   padding-bottom: 2em;
   text-align: center;
 }
-/* line 24, ../sass/_post.scss */
+/* line 22, ../sass/_post.scss */
 #nav-archives a {
   color: #2C5BAD;
   text-decoration: none;
@@ -391,12 +391,12 @@ img {
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
 }
-/* line 27, ../sass/_post.scss */
+/* line 25, ../sass/_post.scss */
 #nav-archives a:hover {
   color: #96add6;
 }
 
-/* line 34, ../sass/_post.scss */
+/* line 32, ../sass/_post.scss */
 h1.post-title {
   font-size: 23px;
   font-size: 1.4375rem;
@@ -407,7 +407,7 @@ h1.post-title {
   font-weight: bold;
   color: #070D19;
 }
-/* line 43, ../sass/_post.scss */
+/* line 41, ../sass/_post.scss */
 h1.post-title a {
   color: #070D19;
   text-decoration: none;
@@ -416,42 +416,42 @@ h1.post-title a {
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
 }
-/* line 46, ../sass/_post.scss */
+/* line 44, ../sass/_post.scss */
 h1.post-title a:hover {
   color: #28539E;
 }
 
-/* line 54, ../sass/_post.scss */
+/* line 52, ../sass/_post.scss */
 .post-heading {
   padding-top: 1.3em;
 }
 
-/* line 59, ../sass/_post.scss */
+/* line 57, ../sass/_post.scss */
 .post-body {
   padding-top: 1em;
   color: #252629;
 }
-/* line 64, ../sass/_post.scss */
+/* line 62, ../sass/_post.scss */
 .post-body strong {
   font-weight: bold;
 }
-/* line 68, ../sass/_post.scss */
+/* line 66, ../sass/_post.scss */
 .post-body h2 {
   color: #802603;
   padding-top: .8em;
   font-weight: 600;
 }
-/* line 77, ../sass/_post.scss */
+/* line 75, ../sass/_post.scss */
 .post-body ul {
   padding-left: 5%;
   padding-top: 16px;
 }
-/* line 81, ../sass/_post.scss */
+/* line 79, ../sass/_post.scss */
 .post-body ul li {
   list-style-type: disc;
   list-style-position: inside;
 }
-/* line 87, ../sass/_post.scss */
+/* line 85, ../sass/_post.scss */
 .post-body a {
   color: #2C5BAD;
   text-decoration: none;
@@ -460,22 +460,22 @@ h1.post-title a:hover {
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
 }
-/* line 90, ../sass/_post.scss */
+/* line 88, ../sass/_post.scss */
 .post-body a:hover {
   color: #96add6;
 }
-/* line 96, ../sass/_post.scss */
+/* line 94, ../sass/_post.scss */
 .post-body ol li {
   list-style-type: decimal;
 }
 
-/* line 101, ../sass/_post.scss */
+/* line 99, ../sass/_post.scss */
 #posts-index {
   padding-bottom: 23px;
   padding-bottom: 1.4375rem;
 }
 
-/* line 106, ../sass/_post.scss */
+/* line 104, ../sass/_post.scss */
 a.post-permalink {
   border: 1px solid #3b3c3e;
   padding: 2px;
@@ -484,12 +484,12 @@ a.post-permalink {
   color: black;
   text-decoration: none;
 }
-/* line 113, ../sass/_post.scss */
+/* line 111, ../sass/_post.scss */
 a.post-permalink:visited {
   text-decoration: none;
 }
 
-/* line 118, ../sass/_post.scss */
+/* line 116, ../sass/_post.scss */
 .post-meta {
   padding-top: .3em;
   color: #252629;
@@ -497,11 +497,11 @@ a.post-permalink:visited {
   padding-bottom: 1em;
   border-bottom: 1px solid #3b3c3e;
 }
-/* line 127, ../sass/_post.scss */
+/* line 125, ../sass/_post.scss */
 .post-meta span {
   color: #2C5BAD;
 }
-/* line 131, ../sass/_post.scss */
+/* line 129, ../sass/_post.scss */
 .post-meta a {
   font-weight: normal;
   color: #2C5BAD;
@@ -510,48 +510,47 @@ a.post-permalink:visited {
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
 }
-/* line 134, ../sass/_post.scss */
+/* line 132, ../sass/_post.scss */
 .post-meta a:hover {
   color: #567cbd;
 }
 
-/* line 141, ../sass/_post.scss */
+/* line 139, ../sass/_post.scss */
 article > footer {
   border-top: 1px solid #3b3c3e;
   margin-top: 1em;
-  color: #4b3f36;
 }
-/* line 142, ../sass/_post.scss */
+/* line 140, ../sass/_post.scss */
 article > footer .read-more {
   margin-top: .75em;
 }
-/* line 149, ../sass/_post.scss */
+/* line 146, ../sass/_post.scss */
 article > footer a {
   color: #28529c;
   text-decoration: none;
 }
-/* line 152, ../sass/_post.scss */
+/* line 149, ../sass/_post.scss */
 article > footer a:hover {
   color: #28529c;
 }
-/* line 157, ../sass/_post.scss */
+/* line 154, ../sass/_post.scss */
 article > footer ul.post-other-posts {
   padding-top: 1em;
 }
-/* line 161, ../sass/_post.scss */
+/* line 158, ../sass/_post.scss */
 article > footer ul.post-other-posts li {
   list-style-type: none;
   font-weight: bold;
 }
-/* line 165, ../sass/_post.scss */
+/* line 162, ../sass/_post.scss */
 article > footer ul.post-other-posts li a {
   font-weight: normal;
 }
-/* line 170, ../sass/_post.scss */
+/* line 167, ../sass/_post.scss */
 article > footer ul.post-other-posts li + li {
   margin-top: 0.5em;
 }
-/* line 174, ../sass/_post.scss */
+/* line 171, ../sass/_post.scss */
 article > footer ul.post-other-posts a:hover {
   text-decoration: underline;
 }
